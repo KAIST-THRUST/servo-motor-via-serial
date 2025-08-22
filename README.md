@@ -17,34 +17,52 @@ It uses PlatformIO and the Arduino framework inside Visual Studio Code.
 
 ## Wiring Diagram
 
-1. Connect the servo **signal** wire to Arduino **D9**.
-2. Connect the servo **VCC** to Arduino **5 V**.
-3. Connect the servo **GND** to Arduino **GND**.
+   <img src="assets/servo-with-arduino-uno.png" alt="Servo wiring diagram" width="400" style="margin: 15px; border: 15px solid white; box-sizing: border-box;" />
+
+| Servo Wire | Connects To         | Arduino Pin/Power        |
+| ---------- | ------------------- | ------------------------ |
+| Signal     | PWM capable I/O pin | D9                       |
+| VCC        | Power               | 5V (or external supply)  |
+| GND        | Ground              | GND (or external ground) |
+
+> [!NOTE]
+> For best performance and to avoid potential damage to your Arduino, it is recommended to power the servo from an external supply rather than the Arduino 5V pin,
+> especially for larger or high-torque servos.
 
 ## Installation & Setup
 
 Follow these steps to get up and running:
 
 1. **Install VS Code**
+
    - Download from the [official VS Code website](https://code.visualstudio.com/) and install.
 
 2. **Install PlatformIO IDE and Serial Monitor**
+
    - Open VS Code, go to **Extensions** in the side menu bar.
    - Search for **PlatformIO IDE** and **Serial Monitor**. Install both extensions.
    - Detailed instructions can be found [here](https://platformio.org/install/ide?install=vscode).
 
 3. **Open This Project Folder**
-   - Download or `git clone` this repository. 
+
+   - Download or `git clone` this repository.
    - In VS Code, select **File → Open Folder...** and choose the project root (this folder).
 
 4. **Connect Your Arduino**
+
    - Plug the Arduino Uno into your computer via USB.
 
 5. **Build and Upload**
+
+   <img src="assets/platformio-upload.png" alt="Platformio Upload" width="400" style="margin: 15px" />
+
    - Click the **PlatformIO Home** icon (left sidebar) → **Project Tasks** → **uno** → **General** → **Upload**.
    - PlatformIO will compile the code and upload to the board.
 
 6. **Open Serial Monitor**
+
+   <img src="assets/serial-monitor-baud-rate.png" alt="Serial Monitor Baud rate" width="500" style="margin: 15px" />
+
    - In VS Code panel (`Ctrl + J` to open), click the **Serial Monitor**.
    - Ensure **Baud Rate** is set to **9600** and proper port is selected.
 
