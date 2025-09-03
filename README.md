@@ -1,11 +1,11 @@
 # Servo Motor Control via Serial Commands
 
-This code allows you to control a servo motor connected to an Arduino Uno by typing a position (0–180) in a serial terminal.
+This code allows you to control a servo motor connected to an Arduino Uno or Teensy 4.1 by typing a position (0–180) in a serial terminal.
 It uses PlatformIO and the Arduino framework inside Visual Studio Code.
 
 ## Hardware Requirements
 
-- **Arduino Uno** board
+- **Arduino Uno**, or **Teensy 4.1** board
 - **Servo motor**
 - **USB A-to-B** cable​ for programming and power
 - **Jumper wires**
@@ -19,7 +19,7 @@ It uses PlatformIO and the Arduino framework inside Visual Studio Code.
 
    <img src="assets/servo-with-arduino-uno.png" alt="Servo wiring diagram" width="400" style="margin: 15px; border: 15px solid white; box-sizing: border-box;" />
 
-| Servo Wire | Connects To         | Arduino Pin/Power        |
+| Servo Wire | Connects To         | Arduino/Teensy Pin       |
 | ---------- | ------------------- | ------------------------ |
 | Signal     | PWM capable I/O pin | D9                       |
 | VCC        | Power               | 5V (or external supply)  |
@@ -27,7 +27,7 @@ It uses PlatformIO and the Arduino framework inside Visual Studio Code.
 
 > [!NOTE]
 > For best performance and to avoid potential damage to your Arduino, it is recommended to power the servo from an external supply rather than the Arduino 5V pin,
-> especially for larger or high-torque servos.
+> especially for larger or high-torque servos. For Teensy 4.1, always use an external power.
 
 ## Installation & Setup
 
@@ -48,15 +48,15 @@ Follow these steps to get up and running:
    - Download or `git clone` this repository.
    - In VS Code, select **File → Open Folder...** and choose the project root (this folder).
 
-4. **Connect Your Arduino**
+4. **Connect Your Arduino/Teensy**
 
-   - Plug the Arduino Uno into your computer via USB.
+   - Plug the Arduino Uno or Teensy 4.1 into your computer via USB.
 
 5. **Build and Upload**
 
    <img src="assets/platformio-upload.png" alt="Platformio Upload" width="400" style="margin: 15px" />
 
-   - Click the **PlatformIO Home** icon (left sidebar) → **Project Tasks** → **uno** → **General** → **Upload**.
+   - Click the **PlatformIO Home** icon (left sidebar) → **Project Tasks** → **uno** (or **teensy41** if you want to use it instead) → **General** → **Upload**.
    - PlatformIO will compile the code and upload to the board.
 
 6. **Open Serial Monitor**
